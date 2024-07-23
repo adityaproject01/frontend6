@@ -3,7 +3,7 @@ import PropTypes from "prop-types"; // Import PropTypes
 // import "../style.css";
 import { listUserFun, createTasksFun } from "./TaskApi";
 
-const CreateTask = ({ isopen, onclose, refreshTasks }) => {
+const CreateTask = ({ closeModal, refreshTaskList }) => {
   const [userListData, setUserListData] = useState({ users: [] });
   const [taskCreated, setTaskCreated] = useState(false);
   const [createTaskDetails, setCreateTaskDetails] = useState({
@@ -20,12 +20,8 @@ const CreateTask = ({ isopen, onclose, refreshTasks }) => {
   });
 
   useEffect(() => {
-    if (isopen) {
-      listUserFun(setUserListData);
-    }
-  }, [isopen]);
-
-  if (!isopen) return null;
+    listUserFun(setUserListData);
+  }, [closeModal]);
 
   function handleGetName(event) {
     setCreateTaskDetails({ ...createTaskDetails, message: event.target.value });
@@ -123,8 +119,8 @@ const CreateTask = ({ isopen, onclose, refreshTasks }) => {
         });
         setTimeout(() => {
           setTaskCreated(false);
-          refreshTasks();
-          onclose();
+          refreshTaskList();
+          closeModal();
         }, 1000);
       } catch (error) {
         console.error("Error creating task:", error);
@@ -133,65 +129,86 @@ const CreateTask = ({ isopen, onclose, refreshTasks }) => {
   };
 
   return (
-    <div className="modal-main">
-      <div className="modal">
-        <div className="modal-content">
-          <h2>Add New Task</h2>
-          <form className="modalForm" onSubmit={handleCreateTask}>
-            <div className="modalFormDetails">
-              Message
-              <textarea
-                id="name"
-                className="messageMore"
-                type="textarea"
-                value={createTaskDetails.message}
-                onChange={handleGetName}
-              />
-              {errors.message && <p className="error">{errors.message}</p>}
+    <div className="col-lg-12">
+      <div className="col-lg-12 d-flex justify-content-lg-between">
+        <div className="">
+          <form
+            className="d-flex row justify-content-lg-between"
+            onSubmit={handleCreateTask}
+          >
+            <div className="p-4 row ">
+              <div className=" d-flex justify-content-lg-between">
+                <label>Message</label>
+                <textarea
+                  id="name"
+                  className=""
+                  type="textarea"
+                  value={createTaskDetails.message}
+                  onChange={handleGetName}
+                />
+              </div>
+
+              <span
+                className="text-danger
+
+"
+              >
+                {errors.message && <p className="error">{errors.message}</p>}
+              </span>
             </div>
 
-            <div className="modalFormDetails">
-              <label>Date</label>
-              <input
-                type="datetime-local"
-                value={createTaskDetails.due_date}
-                onChange={handleGetDate}
-              />
-              {errors.due_date && <p className="error">{errors.due_date}</p>}
+            <div className=" p-4 row ">
+              <div className="d-flex justify-content-lg-between">
+                <label>Date</label>
+                <input
+                  type="datetime-local"
+                  value={createTaskDetails.due_date}
+                  onChange={handleGetDate}
+                />
+              </div>
+              <span className="text-danger">
+                {errors.due_date && <p className="error">{errors.due_date}</p>}
+              </span>
             </div>
-            <div className="modalFormDetails">
-              <label>Priority</label>
-              <select
-                value={createTaskDetails.priority}
-                onChange={handleGetTaskType}
-              >
-                <option value="">Choose Task</option>
-                <option value="1">Normal Task</option>
-                <option value="2">Medium Task</option>
-                <option value="3">High Priority Task</option>
-              </select>
-              {errors.priority && <p className="error">{errors.priority}</p>}
+            <div className=" p-4 row ">
+              <div className="d-flex justify-content-lg-between">
+                <label>Priority</label>
+                <select
+                  value={createTaskDetails.priority}
+                  onChange={handleGetTaskType}
+                >
+                  <option disbaled>Choose Task</option>
+                  <option value="1">Normal Task</option>
+                  <option value="2">Medium Task</option>
+                  <option value="3">High Priority Task</option>
+                </select>
+              </div>
+              <span className="text-danger">
+                {errors.priority && <p className="error">{errors.priority}</p>}
+              </span>
             </div>
-            <div className="modalFormDetails">
-              <label>Assign To</label>
-              <select onChange={handleGetUser}>
-                <option value="">Choose the User</option>
-                {userListData.users.map((item, index) => (
-                  <option key={item.id} value={index}>
-                    {item.name}
-                  </option>
-                ))}
-              </select>
-              {errors.assigned_to && (
-                <p className="error">{errors.assigned_to}</p>
-              )}
+            <div className="p-4 row ">
+              <div className="d-flex justify-content-lg-between">
+                <label>Assign To</label>
+                <select onChange={handleGetUser}>
+                  <option disabled>Choose the User</option>
+
+                  {userListData.users.map((item, index) => (
+                    <option key={item.id} value={index}>
+                      {item.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <span className="text-danger">
+                {errors.assigned_to && (
+                  <p className="error">{errors.assigned_to}</p>
+                )}
+              </span>
             </div>
-            <div className="modalFormDetails">
+            <div className="p-4 d-flex justify-content-lg-between">
               <button type="submit">Create</button>
-              {taskCreated && <p>Task Created!</p>}
-              <button className="close" onClick={onclose}>
-                Close
-              </button>
+              <span>{taskCreated && <p>Task Created!</p>}</span>
             </div>
           </form>
         </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./style1.css";
 
 import editIcon from "../assets/icons/icons8-edit.svg";
 import { listUserFun, updateTaskFun } from "./TaskApi";
@@ -129,7 +130,7 @@ const ModifyTask = ({
                     onChange={handleMessage}
                   />
                 ) : (
-                  <div className="">{message}</div>
+                  <div className="text-break overflow-auto ">{message}</div>
                 )}
               </div>
             </div>

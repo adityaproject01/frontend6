@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+
 import deleteIcon from "../assets/icons/trash-delete-bin.svg";
 // import viewmoreIcon from "../assets/icons/chevron-right.svg";
 import ModifyTask from "./ModifyTask";
 import { deleteTaskFun } from "./TaskApi";
 import editIcon from "../assets/icons/edit1.svg";
-const MediumPriorit = ({ listTaskData, refreshTasks }) => {
+const MediumPriority = ({ listTaskData, refreshTasks }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTaskIndex, setSelectedTaskIndex] = useState(null);
   const [tasks, setTasks] = useState([]);
@@ -35,13 +36,16 @@ const MediumPriorit = ({ listTaskData, refreshTasks }) => {
   };
 
   return (
-    <div>
+    <div className="d-flex flex-wrap overflow-scroll h-80 justify-content-lg-center">
       {tasks.length > 0 ? (
         tasks.map((item, index) => (
-          <div key={index + 1} className="col-lg-12 row mb-3">
-            <div className="col-lg-12 d-flex justify-content-lg-between align-items-center">
+          <div
+            key={index + 1}
+            className=" bg-white rounded-3 d-flex justify-content-lg-center col-lg-11 row mb-3"
+          >
+            <div className="m-2 col-lg-12 d-flex justify-content-lg-between align-items-center">
               <div>{item.assigned_name}</div>
-              <div className="d-flex">
+              <div className=" d-flex align-items-lg-center">
                 <img
                   src={editIcon}
                   onClick={() => openModal(index)}
@@ -99,16 +103,8 @@ const MediumPriorit = ({ listTaskData, refreshTasks }) => {
               </div>
             </div>
 
-            <div className="col-lg-12">
-              <p
-                style={{
-                  textOverflow: "ellipsis",
-                  maxWidth: "100%",
-                  overflow: "hidden",
-                }}
-              >
-                {item.message}
-              </p>
+            <div className=" text-break mt-3 col-lg-12">
+              <p className=" messagePara overflow-auto  ">{item.message}</p>
             </div>
           </div>
         ))
@@ -119,4 +115,4 @@ const MediumPriorit = ({ listTaskData, refreshTasks }) => {
   );
 };
 
-export default MediumPriorit;
+export default MediumPriority;

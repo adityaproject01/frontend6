@@ -35,13 +35,16 @@ const HighPriority = ({ listTaskData, refreshTasks }) => {
   };
 
   return (
-    <div>
+    <div className="d-flex flex-wrap overflow-scroll h-80 justify-content-lg-center">
       {tasks.length > 0 ? (
         tasks.map((item, index) => (
-          <div key={index + 1} className="col-lg-12 row mb-3">
-            <div className="col-lg-12 d-flex justify-content-lg-between align-items-center">
+          <div
+            key={index + 1}
+            className=" bg-white rounded-3 d-flex justify-content-lg-center col-lg-11 row mb-3"
+          >
+            <div className="m-2 col-lg-12 d-flex justify-content-lg-between align-items-center">
               <div>{item.assigned_name}</div>
-              <div className="d-flex">
+              <div className=" d-flex align-items-lg-center">
                 <img
                   src={editIcon}
                   onClick={() => openModal(index)}
@@ -99,16 +102,8 @@ const HighPriority = ({ listTaskData, refreshTasks }) => {
               </div>
             </div>
 
-            <div className="col-lg-12">
-              <p
-                style={{
-                  textOverflow: "ellipsis",
-                  maxWidth: "100%",
-                  overflow: "hidden",
-                }}
-              >
-                {item.message}
-              </p>
+            <div className=" text-break mt-3 col-lg-12">
+              <p className=" messagePara overflow-auto  ">{item.message}</p>
             </div>
           </div>
         ))
