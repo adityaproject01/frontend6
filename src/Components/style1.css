@@ -196,6 +196,7 @@
     width: 15px;
   }
   .priority {
+    border: 3px solid black !important;
     background: #eff3fc;
     width: 100%;
     height: 80dvh;

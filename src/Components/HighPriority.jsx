@@ -35,7 +35,7 @@ const HighPriority = ({ listTaskData, refreshTasks }) => {
   };
 
   return (
-    <div className="d-flex flex-wrap overflow-scroll h-80 justify-content-center justify-content-lg-center">
+    <div className="d-flex flex-wrap overflow-scroll h-25 justify-content-center justify-content-lg-center">
       {tasks.length > 0 ? (
         tasks.map((item, index) => (
           <div
@@ -46,6 +46,7 @@ const HighPriority = ({ listTaskData, refreshTasks }) => {
               <div>{item.assigned_name}</div>
               <div className=" d-flex align-items-lg-center">
                 <img
+                  className="icon"
                   src={editIcon}
                   onClick={() => openModal(index)}
                   alt="edit icon"
@@ -93,10 +94,10 @@ const HighPriority = ({ listTaskData, refreshTasks }) => {
 
                 <div className="col-lg-2">
                   <img
+                    className="icon"
                     src={deleteIcon}
                     onClick={() => deleteItem(item.id)}
                     alt="deleteIcon"
-                    className="cursor-pointer"
                   />
                 </div>
               </div>
