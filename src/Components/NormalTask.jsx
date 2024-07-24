@@ -35,7 +35,7 @@ const NormalPriority = ({ listTaskData, refreshTasks }) => {
   };
 
   return (
-    <div className="d-flex flex-wrap overflow-scroll h-80 justify-content-center justify-content-lg-center">
+    <div className="d-flex flex-wrap  justify-content-center justify-content-lg-center">
       {tasks.length > 0 ? (
         tasks.map((item, index) => (
           <div
@@ -45,12 +45,14 @@ const NormalPriority = ({ listTaskData, refreshTasks }) => {
             <div className="m-2 col-lg-12 col-12 d-flex justify-content-between justify-content-sm-between justify-content-lg-between justify-content-lg-between align-items-center">
               <div>{item.assigned_name}</div>
               <div className=" d-flex align-items-lg-center">
-                <img
-                  src={editIcon}
-                  onClick={() => openModal(index)}
-                  alt="edit icon"
-                />
-
+                <div className="">
+                  <img
+                    className="icon"
+                    src={editIcon}
+                    onClick={() => openModal(index)}
+                    alt="edit icon"
+                  />
+                </div>
                 {selectedTaskIndex === index && (
                   <div
                     id="staticBackdrop"
@@ -91,12 +93,12 @@ const NormalPriority = ({ listTaskData, refreshTasks }) => {
                   </div>
                 )}
 
-                <div className="col-lg-2">
+                <div className="">
                   <img
+                    className="icon"
                     src={deleteIcon}
                     onClick={() => deleteItem(item.id)}
                     alt="deleteIcon"
-                    className="cursor-pointer"
                   />
                 </div>
               </div>

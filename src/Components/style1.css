@@ -18,6 +18,10 @@
 }
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+  .icon {
+    width: 20px;
+    padding: 2px;
+  }
   .h-80 {
     height: 85% !important;
   }
@@ -49,6 +53,10 @@
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
+  .icon {
+    width: 20px;
+    padding: 2px;
+  }
   .h-80 {
     height: 85% !important;
   }
@@ -78,6 +86,10 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
+  .icon {
+    width: 20px;
+    padding: 2px;
+  }
   .h-80 {
     height: 85% !important;
   }
@@ -111,77 +123,16 @@
 /* Large devices (desktops, 992px and up) */
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .vm {
-    display: none !important;
+  .staticBackdrop {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    background: #000 !important;
   }
-  .nm {
-    display: flex !important;
-    align-items: center;
+  .icon {
+    width: 25px;
+    padding: 2px;
   }
-  .h-80 {
-    height: 95% !important;
-  }
-  img {
-    width: 15px;
-  }
-  .priority {
-    background: #eff3fc;
-    width: 100%;
-    height: 80dvh;
-  }
-  .medium {
-    background: #fef6ea;
-    width: 100%;
-    height: 80dvh;
-  }
-  .normal {
-    width: 100%;
-    height: 80dvh;
-    background-color: #fdf0ef;
-  }
-  .messagePara {
-    height: 100px;
-  }
-}
-
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) and (max-width: 1399.98px) {
-  .vm {
-    display: none !important;
-  }
-  .nm {
-    display: flex !important;
-
-    align-items: center;
-  }
-  .h-80 {
-    height: 95% !important;
-  }
-  img {
-    width: 15px;
-  }
-  .priority {
-    background: #eff3fc;
-    width: 100%;
-    height: 80dvh;
-  }
-  .medium {
-    background: #fef6ea;
-    width: 100%;
-    height: 80dvh;
-  }
-  .normal {
-    width: 100%;
-    height: 80dvh;
-    background-color: #fdf0ef;
-  }
-  .messagePara {
-    height: 100px;
-  }
-}
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
   .vm {
     display: none !important;
   }
@@ -202,11 +153,110 @@
     height: 80dvh;
   }
   .medium {
+    border: 3px solid black !important;
     background: #fef6ea;
     width: 100%;
     height: 80dvh;
   }
   .normal {
+    width: 100%;
+    height: 80dvh;
+    background-color: #fdf0ef;
+  }
+  .messagePara {
+    height: 100px;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .staticBackdrop {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    background: #000 !important;
+  }
+  .icon {
+    width: 25px;
+    padding: 2px;
+  }
+  .vm {
+    display: none !important;
+  }
+  .nm {
+    display: flex !important;
+
+    align-items: center;
+  }
+  .h-80 {
+    height: 95% !important;
+  }
+  img {
+    width: 15px;
+  }
+  .priority {
+    border: 3px solid black !important;
+    background: #eff3fc;
+    width: 100%;
+    height: 80dvh;
+  }
+  .medium {
+    border: 3px solid black !important;
+    background: #fef6ea;
+    width: 100%;
+    height: 80dvh;
+  }
+  .normal {
+    border: 3px solid black !important;
+    width: 100%;
+    height: 80dvh;
+    background-color: #fdf0ef;
+  }
+  .messagePara {
+    height: 100px;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .staticBackdrop {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    background: #000 !important;
+  }
+  .icon {
+    width: 25px;
+    padding: 2px;
+  }
+  .vm {
+    display: none !important;
+  }
+  .nm {
+    display: flex !important;
+    align-items: center;
+  }
+  .h-80 {
+    height: 95% !important;
+  }
+  img {
+    width: 15px;
+  }
+  .priority {
+    border: 3px solid black !important;
+    background: #eff3fc;
+    width: 100%;
+    height: 80dvh;
+  }
+  .medium {
+    border: 3px solid black !important;
+
+    background: #fef6ea;
+    width: 100%;
+    height: 80dvh;
+  }
+  .normal {
+    border: 3px solid black !important;
     width: 100%;
     height: 80dvh;
     background-color: #fdf0ef;

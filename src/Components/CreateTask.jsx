@@ -137,11 +137,12 @@ const CreateTask = ({ closeModal, refreshTaskList }) => {
             onSubmit={handleCreateTask}
           >
             <div className="p-4 row ">
-              <div className="  d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-between justify-content-sm-between justify-content-md-between justify-content-lg-between justify-content-xl-between ">
+              <div className=" col-lg-12 d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-between justify-content-sm-between justify-content-md-between justify-content-lg-between justify-content-xl-between ">
                 <label>Message</label>
                 <textarea
+                  rows={5}
                   id="name"
-                  className=""
+                  className="col-10 resize-none"
                   type="textarea"
                   value={createTaskDetails.message}
                   onChange={handleGetName}

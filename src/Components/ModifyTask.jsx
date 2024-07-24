@@ -118,13 +118,14 @@ const ModifyTask = ({
     <div className="col-lg-12 col-12">
       {!updateTask ? (
         <>
-          <form className="col-lg-12" onSubmit={handleSubmit}>
-            <div className="col-lg-12 col-lg-12 d-flex justify-content-between justify-content-lg-between">
-              <span> Message</span>
+          <form className="col-lg-12 col-12" onSubmit={handleSubmit}>
+            <div className="col-lg-12 col-lg-12 d-flex d-lg-flex justify-content-between justify-content-lg-between">
+              <span className="col-2"> Message</span>
               <div>
                 {isEdit ? (
                   <textarea
-                    className="messageMore  resize-none"
+                    rows={5}
+                    className="messageMore col-lg-12  resize-none"
                     type="textarea"
                     value={getmessage}
                     onChange={handleMessage}
