@@ -210,18 +210,20 @@ const ModifyTask = ({
                 <>
                   <div className="editDetails" onClick={handleBackBtnOn}>
                     <img src={editIcon} alt="editIcon" />
-                    <button>Back</button>
+                    <button className="btn btn-outline-dark">Back</button>
                   </div>
                 </>
               ) : (
                 <div className="editDetails" onClick={handleBackBtnOff}>
                   <img src={editIcon} alt="editIcon" />
-                  <button>Edit</button>
+                  <button className="text-black btn btn-outline-info">
+                    Edit
+                  </button>
                 </div>
               )}
 
               <button
-                className="updateBtn"
+                className="updateBtn btn btn-outline-success"
                 type="submit"
                 onClick={handleUpdated}
               >
