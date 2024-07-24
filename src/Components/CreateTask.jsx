@@ -6,6 +6,8 @@ import { listUserFun, createTasksFun } from "./TaskApi";
 const CreateTask = ({ closeModal, refreshTaskList }) => {
   const [userListData, setUserListData] = useState({ users: [] });
   const [taskCreated, setTaskCreated] = useState(false);
+  const [getdue_date, setGetdue_date] = useState("");
+
   const [createTaskDetails, setCreateTaskDetails] = useState({
     message: "",
     due_date: "",
@@ -28,31 +30,51 @@ const CreateTask = ({ closeModal, refreshTaskList }) => {
     setErrors({ ...errors, message: "" });
   }
 
-  function handleGetDate(event) {
-    const inputDate = event.target.value;
-    if (!inputDate) {
-      setErrors({ ...errors, due_date: "Due date is required" });
-      return;
-    } else {
-      setErrors({ ...errors, due_date: "" });
-    }
+  // function handleGetDate(event) {
+  //   const inputDate = event.target.value;
+  //   if (!inputDate) {
+  //     setErrors({ ...errors, due_date: "Due date is required" });
+  //     return;
+  //   } else {
+  //     setErrors({ ...errors, due_date: "" });
+  //   }
 
-    const dateObj = new Date(inputDate);
-    const year = dateObj.getFullYear();
-    const month = ("0" + (dateObj.getMonth() + 1)).slice(-2);
-    const day = ("0" + dateObj.getDate()).slice(-2);
-    let hour = dateObj.getHours();
-    const minute = ("0" + dateObj.getMinutes()).slice(-2);
-    let second = 11;
+  //   const dateObj = new Date(inputDate);
+  //   const year = dateObj.getFullYear();
+  //   const month = ("0" + (dateObj.getMonth() + 1)).slice(-2);
+  //   const day = ("0" + dateObj.getDate()).slice(-2);
+  //   let hour = dateObj.getHours();
+  //   const minute = ("0" + dateObj.getMinutes()).slice(-2);
+  //   let second = 11;
 
-    if (hour === 0) hour = 12;
-    const formattedTime = `${hour}:${minute}:${second}`;
+  //   if (hour === 0) hour = 12;
+  //   const formattedTime = `${hour}:${minute}:${second}`;
+
+  //   setCreateTaskDetails({
+  //     ...createTaskDetails,
+  //     due_date: `${year}-${month}-${day} ${formattedTime}`,
+  //   });
+  // }
+  function handleDueDate(e) {
+    setGetdue_date(e.target.value);
+    formatDate(getdue_date);
+  }
+  const formatDate = (dateString) => {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = ("0" + (date.getMonth() + 1)).slice(-2);
+    const day = ("0" + date.getDate()).slice(-2);
+    const hours = ("0" + date.getHours()).slice(-2);
+    const minutes = ("0" + date.getMinutes()).slice(-2);
+    const seconds = ("0" + date.getSeconds()).slice(-2);
+    let dateTimes = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 
     setCreateTaskDetails({
       ...createTaskDetails,
-      due_date: `${year}-${month}-${day} ${formattedTime}`,
+      due_date: dateTimes,
     });
-  }
+  };
 
   function handleGetTaskType(event) {
     setCreateTaskDetails({
@@ -84,7 +106,7 @@ const CreateTask = ({ closeModal, refreshTaskList }) => {
       newErrors.message = "";
     }
 
-    if (!createTaskDetails.due_date.trim()) {
+    if (!createTaskDetails.due_date) {
       newErrors.due_date = "Please select the Due date";
       formIsValid = false;
     } else {
@@ -127,7 +149,7 @@ const CreateTask = ({ closeModal, refreshTaskList }) => {
       }
     }
   };
-
+  console.log(createTaskDetails);
   return (
     <div className="col-lg-12 col-sm-12 col-md-12 col-12">
       <div className="col-lg-12 col-sm-12 col-md-12 col-12 d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-between justify-content-sm-between justify-content-md-between justify-content-lg-between justify-content-xl-between ">
@@ -149,11 +171,7 @@ const CreateTask = ({ closeModal, refreshTaskList }) => {
                 />
               </div>
 
-              <span
-                className="text-danger
-
-"
-              >
+              <span className="text-danger">
                 {errors.message && <p className="error">{errors.message}</p>}
               </span>
             </div>
@@ -163,8 +181,8 @@ const CreateTask = ({ closeModal, refreshTaskList }) => {
                 <label>Date</label>
                 <input
                   type="datetime-local"
-                  value={createTaskDetails.due_date}
-                  onChange={handleGetDate}
+                  // value={}
+                  onChange={handleDueDate}
                 />
               </div>
               <span className="text-danger">
