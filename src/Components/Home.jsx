@@ -48,7 +48,7 @@ const Home = () => {
                 <img src={closeIcon} onClick={handleToggleOff} alt="" />
                 <nav className=" col-lg-12 mt-5 d-flex row gap-4 nav nav-pills nav-fill">
                   <a
-                    href="#"
+                    href="#a"
                     className=" nav-item nav-link col-lg-12 d-flex h-25 "
                   >
                     <img
@@ -59,7 +59,7 @@ const Home = () => {
                     <span className="ps-3 ">Dashboard</span>
                   </a>
                   <a
-                    href="#"
+                    href="#a"
                     className="active nav-item nav-link col-lg-12 d-flex h-25 "
                   >
                     <img
@@ -70,18 +70,7 @@ const Home = () => {
                     <span className="ps-3 ">My Task </span>
                   </a>
 
-                  {/* <a
-                    href="#"
-                    className="col-lg-12 d-flex h-25 nav-item nav-link active"
-                  >
-                    <img
-                      src={taskIcon}
-                      className="col-lg-1 col-sm-1 col-md-1  active"
-                      alt="taskIcon"
-                    />
-                    <span className="ps-3 list-group-item active">My Task</span>
-                  </a> */}
-                  <a href="#" className=" nav-item nav-link col-lg-12 d-flex">
+                  <a href="#a" className=" nav-item nav-link col-lg-12 d-flex">
                     <img
                       src={clientsIcon}
                       className="col-lg-1"
@@ -89,7 +78,7 @@ const Home = () => {
                     />
                     <span className="ps-3">Clients</span>
                   </a>
-                  <a href="#" className=" nav-item nav-link col-lg-12 d-flex">
+                  <a href="#a" className=" nav-item nav-link col-lg-12 d-flex">
                     <img
                       src={messageIcon}
                       className="col-lg-1"
@@ -97,7 +86,7 @@ const Home = () => {
                     />
                     <span className="ps-3">Message</span>
                   </a>
-                  <a href="#" className=" nav-item nav-link col-lg-12 d-flex ">
+                  <a href="#a" className=" nav-item nav-link col-lg-12 d-flex ">
                     <img
                       src={billIcon}
                       className="col-lg-1"
@@ -115,7 +104,10 @@ const Home = () => {
           </div>
           <div className="nm">
             <nav className=" col-lg-12 col-xl-12 mt-5 d-flex row gap-4 nav nav-pills nav-fill">
-              <a href="#" className=" nav-item nav-link col-lg-12 d-flex h-25 ">
+              <a
+                href="#a"
+                className=" nav-item nav-link col-lg-12 d-flex h-25 "
+              >
                 <img
                   src={dashboardIcon}
                   className="col-lg-1"
@@ -134,15 +126,15 @@ const Home = () => {
                 />
                 <span className="ps-3 list-group-item active">My Task</span>
               </a>
-              <a href="#" className=" nav-item nav-link col-lg-12 d-flex">
+              <a href="#a" className=" nav-item nav-link col-lg-12 d-flex">
                 <img src={clientsIcon} className="col-lg-1" alt="clintIcon" />
                 <span className="ps-3">Clients</span>
               </a>
-              <a href="#" className=" nav-item nav-link col-lg-12 d-flex">
+              <a href="#a" className=" nav-item nav-link col-lg-12 d-flex">
                 <img src={messageIcon} className="col-lg-1" alt="messageIcon" />
                 <span className="ps-3">Message</span>
               </a>
-              <a href="#" className=" nav-item nav-link col-lg-12 d-flex ">
+              <a href="#a" className=" nav-item nav-link col-lg-12 d-flex ">
                 <img src={billIcon} className="col-lg-1" alt="messageIcon" />
                 <span className="ps-3">Billing</span>
               </a>
