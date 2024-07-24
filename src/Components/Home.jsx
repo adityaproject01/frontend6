@@ -209,7 +209,7 @@ const Home = () => {
             <div className="col-lg-12 col-sm-12 col-md-12 col-12 overflow-auto  d-flex ">
               <div className="col-lg-4 col-12  d-flex justify-content-lg-center justify-content-center  p-1 rounded-3  ">
                 <div className="overflow-auto col-lg-12 col-12  p-0 rounded-3  priority">
-                  <p className="p-3 fs-3 fw-bold">Priority Task</p>
+                  <p className="p-3 fs-5 fw-bold">Priority Task</p>
                   <HighPriority
                     listTaskData={listTaskData}
                     refreshTasks={refreshTaskList}
@@ -218,7 +218,7 @@ const Home = () => {
               </div>
               <div className="col-lg-4 col-12 d-flex justify-content-lg-center  p-1 rounded-3  ">
                 <div className="overflow-auto col-lg-12 col-12 p-0 rounded-3 medium">
-                  <p className="p-3 fs-3 fw-bold ">Medium Task</p>
+                  <p className="p-3 fs-5 fw-bold ">Medium Task</p>
                   <MediumPriority
                     listTaskData={listTaskData}
                     refreshTasks={refreshTaskList}
@@ -227,7 +227,7 @@ const Home = () => {
               </div>
               <div className="col-lg-4 col-12 d-flex justify-content-lg-center  p-1 rounded-3  ">
                 <div className="overflow-auto col-lg-12  p-0 normal">
-                  <p className="p-3 fw-bold fs-3">Normal Task</p>
+                  <p className="p-3 fw-bold fs-5">Normal Task</p>
                   <NormalTask
                     listTaskData={listTaskData}
                     refreshTasks={refreshTaskList}
