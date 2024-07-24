@@ -1,71 +1,207 @@
-*{
-    margin: 0px;
-    ::-webkit-scrollbar {
-        position: absolute;
-        z-index: 5;
-      width: 5px;  
-      height: 5px; 
-      }
-      
-      ::-webkit-scrollbar-thumb {
-        position: absolute;
-        z-index: 5;
-      background: red;
-      border-radius: 5px;
-      width: 5px;   
-      height: 20px; 
-      }
+* {
+  margin: 0px;
+  ::-webkit-scrollbar {
+    position: absolute;
+    z-index: 5;
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    position: absolute;
+    z-index: 5;
+    background: red;
+    border-radius: 5px;
+    width: 5px;
+    height: 20px;
+  }
 }
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    /* Styles for X-Small devices */
+  .h-80 {
+    height: 85% !important;
+  }
+  .nm {
+    display: none !important;
+  }
+  img {
+    width: 15px;
+  }
+  .priority {
+    background: #eff3fc;
+    width: 100%;
+    height: 80dvh;
+  }
+  .medium {
+    background: #fef6ea;
+    width: 100%;
+    height: 80dvh;
+  }
+  .normal {
+    width: 100%;
+    height: 80dvh;
+    background-color: #fdf0ef;
+  }
+  .messagePara {
+    height: 100px;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-    /* Styles for Small devices */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .nm {
+    display: none !important;
+  }
+  img {
+    width: 15px;
+  }
+  .priority {
+    background: #eff3fc;
+    width: 100%;
+    height: 80dvh;
+  }
+  .medium {
+    background: #fef6ea;
+    width: 100%;
+    height: 80dvh;
+  }
+  .normal {
+    width: 100%;
+    height: 80dvh;
+    background-color: #fdf0ef;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    /* Styles for Medium devices */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .h-80 {
+    height: 85% !important;
+  }
+  .nm {
+    display: none !important;
+  }
+  img {
+    width: 15px;
+  }
+  .priority {
+    background: #eff3fc;
+    width: 100%;
+    height: 80dvh;
+  }
+  .medium {
+    background: #fef6ea;
+    width: 100%;
+    height: 80dvh;
+  }
+  .normal {
+    width: 100%;
+    height: 80dvh;
+    background-color: #fdf0ef;
+  }
+  .messagePara {
+    height: 100px;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-     .h-80{
-        height: 95% !important;
-    }
-   img{
-    width: 15px;
-   }
-   .priority{
-    background: #EFF3FC;
-    width: 100%;
-    height: 80dvh;
-   }
-   .medium{
-    background: #FEF6EA;
-    width: 100%;
-    height: 80dvh;
-   }
-   .normal{
-    width: 100%;
-    height: 80dvh;
-    background-color: #FDF0EF;
-}
-.messagePara{
-    height: 100px;
-}
 
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .vm {
+    display: none !important;
+  }
+  .nm {
+    display: flex !important;
+  }
+  .h-80 {
+    height: 95% !important;
+  }
+  img {
+    width: 15px;
+  }
+  .priority {
+    background: #eff3fc;
+    width: 100%;
+    height: 80dvh;
+  }
+  .medium {
+    background: #fef6ea;
+    width: 100%;
+    height: 80dvh;
+  }
+  .normal {
+    width: 100%;
+    height: 80dvh;
+    background-color: #fdf0ef;
+  }
+  .messagePara {
+    height: 100px;
+  }
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    /* Styles for X-Large devices */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .vm {
+    display: none !important;
+  }
+  .nm {
+    display: flex !important;
+  }
+  .h-80 {
+    height: 95% !important;
+  }
+  img {
+    width: 15px;
+  }
+  .priority {
+    background: #eff3fc;
+    width: 100%;
+    height: 80dvh;
+  }
+  .medium {
+    background: #fef6ea;
+    width: 100%;
+    height: 80dvh;
+  }
+  .normal {
+    width: 100%;
+    height: 80dvh;
+    background-color: #fdf0ef;
+  }
+  .messagePara {
+    height: 100px;
+  }
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
-    /* Styles for XX-Large devices */
+  .vm {
+    display: none !important;
+  }
+  .nm {
+    display: flex !important;
+  }
+  .h-80 {
+    height: 95% !important;
+  }
+  img {
+    width: 15px;
+  }
+  .priority {
+    background: #eff3fc;
+    width: 100%;
+    height: 80dvh;
+  }
+  .medium {
+    background: #fef6ea;
+    width: 100%;
+    height: 80dvh;
+  }
+  .normal {
+    width: 100%;
+    height: 80dvh;
+    background-color: #fdf0ef;
+  }
+  .messagePara {
+    height: 100px;
+  }
 }

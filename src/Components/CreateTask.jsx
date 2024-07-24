@@ -129,15 +129,15 @@ const CreateTask = ({ closeModal, refreshTaskList }) => {
   };
 
   return (
-    <div className="col-lg-12">
-      <div className="col-lg-12 d-flex justify-content-lg-between">
+    <div className="col-lg-12 col-sm-12 col-md-12 col-12">
+      <div className="col-lg-12 col-sm-12 col-md-12 col-12 d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-between justify-content-sm-between justify-content-md-between justify-content-lg-between justify-content-xl-between ">
         <div className="">
           <form
-            className="d-flex row justify-content-lg-between"
+            className=" row  d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-between justify-content-sm-between justify-content-md-between justify-content-lg-between justify-content-xl-between "
             onSubmit={handleCreateTask}
           >
             <div className="p-4 row ">
-              <div className=" d-flex justify-content-lg-between">
+              <div className="  d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-between justify-content-sm-between justify-content-md-between justify-content-lg-between justify-content-xl-between ">
                 <label>Message</label>
                 <textarea
                   id="name"
@@ -158,7 +158,7 @@ const CreateTask = ({ closeModal, refreshTaskList }) => {
             </div>
 
             <div className=" p-4 row ">
-              <div className="d-flex justify-content-lg-between">
+              <div className="d-flex  d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-between justify-content-sm-between justify-content-md-between justify-content-lg-between justify-content-xl-between ">
                 <label>Date</label>
                 <input
                   type="datetime-local"
@@ -171,13 +171,15 @@ const CreateTask = ({ closeModal, refreshTaskList }) => {
               </span>
             </div>
             <div className=" p-4 row ">
-              <div className="d-flex justify-content-lg-between">
+              <div className=" d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-between justify-content-sm-between justify-content-md-between justify-content-lg-between justify-content-xl-between ">
                 <label>Priority</label>
                 <select
                   value={createTaskDetails.priority}
                   onChange={handleGetTaskType}
                 >
-                  <option disbaled>Choose Task</option>
+                  <option value="" disabled>
+                    Choose Level
+                  </option>
                   <option value="1">Normal Task</option>
                   <option value="2">Medium Task</option>
                   <option value="3">High Priority Task</option>
@@ -188,10 +190,15 @@ const CreateTask = ({ closeModal, refreshTaskList }) => {
               </span>
             </div>
             <div className="p-4 row ">
-              <div className="d-flex justify-content-lg-between">
+              <div className=" d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-between justify-content-sm-between justify-content-md-between justify-content-lg-between justify-content-xl-between ">
                 <label>Assign To</label>
-                <select onChange={handleGetUser}>
-                  <option disabled>Choose the User</option>
+                <select
+                  className="custom-select custom-select-lg mb-3"
+                  onChange={handleGetUser}
+                >
+                  <option selected disabled>
+                    Select Assignee
+                  </option>
 
                   {userListData.users.map((item, index) => (
                     <option key={item.id} value={index}>
@@ -207,7 +214,9 @@ const CreateTask = ({ closeModal, refreshTaskList }) => {
               </span>
             </div>
             <div className="p-4 d-flex justify-content-lg-between">
-              <button type="submit">Create</button>
+              <button className="btn btn-secondary" type="submit">
+                Create
+              </button>
               <span>{taskCreated && <p>Task Created!</p>}</span>
             </div>
           </form>

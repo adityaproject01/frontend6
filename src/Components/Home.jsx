@@ -11,7 +11,7 @@ import clientsIcon from "../assets/icons/users.svg";
 import closeIcon from "../assets/icons/close.svg";
 import plusIcon from "../assets/icons/plus.png";
 import billIcon from "../assets/icons/invoice.svg";
-
+import toggleIcon from "../assets/icons/menu.svg";
 import HighPriority from "./HighPriority";
 import NormalTask from "./NormalTask";
 import MediumPriority from "./MediumPriority";
@@ -19,86 +19,139 @@ import CreateTask from "./CreateTask";
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [listTaskData, setListTaskData] = useState(null);
-  // const [toggleBtn, setToggleBtn] = useState(false);
+  const [toggleBtn, setToggleBtn] = useState(false);
   useEffect(() => {
     listTaskFun(setListTaskData);
   }, []);
   const openModal = () => {
     setIsModalOpen(true);
   };
-  let setToggleBtn = null;
   const closeModal = () => {
     setIsModalOpen(false);
   };
   const refreshTaskList = () => {
     listTaskFun(setListTaskData);
   };
-  // function handleToggleOn() {
-  //   setToggleBtn(true);
-  // }
+  function handleToggleOn() {
+    setToggleBtn(true);
+  }
   function handleToggleOff() {
     setToggleBtn(false);
   }
   return (
-    <div className="container-fluid d-flex justify-content-lg-center">
-      <div className=" col-lg-12 row d-flex justify-content-lg-center">
-        <div className="col-lg-2 ">
-          <img
-            src={closeIcon}
-            className="col-lg-1"
-            alt="close icon"
-            onClick={handleToggleOff}
-          />
+    <div className="container-fluid d-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center">
+      <div className=" col-lg-12 col-xl-12 col-12 col-md-12 col-sm-12 row d-flex d-sm-flex d-lg-flex d-md-flex d-lg-flex d-xl-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center ">
+        <div className="col-lg-2 col-12 col-md-12 col-sm-12 col-xl-2 border-end ">
+          <div className="vm">
+            {toggleBtn ? (
+              <>
+                <img src={closeIcon} onClick={handleToggleOff} alt="" />
+                <nav className=" col-lg-12 mt-5 d-flex row gap-4 nav nav-pills nav-fill">
+                  <a
+                    href="#"
+                    className=" nav-item nav-link col-lg-12 d-flex h-25 "
+                  >
+                    <img
+                      src={dashboardIcon}
+                      className="col-lg-1"
+                      alt="dashboardIcon"
+                    />
+                    <span className="ps-3 ">Dashboard</span>
+                  </a>
+                  <a
+                    href="#"
+                    className="active nav-item nav-link col-lg-12 d-flex h-25 "
+                  >
+                    <img
+                      src={taskIcon}
+                      className="col-lg-1"
+                      alt="dashboardIcon"
+                    />
+                    <span className="ps-3 ">My Task </span>
+                  </a>
 
-          <div className="col-lg-2">
-            <div className="rightContainer1Rightsm">
-              <img
-                src={userIcon}
-                className="col-lg-1"
-                alt="notofocation icon"
-              />
-              <img
-                src={closeIcon}
-                className="col-1"
-                alt="close icon"
-                onClick={handleToggleOff}
-              />
-            </div>
+                  {/* <a
+                    href="#"
+                    className="col-lg-12 d-flex h-25 nav-item nav-link active"
+                  >
+                    <img
+                      src={taskIcon}
+                      className="col-lg-1 col-sm-1 col-md-1  active"
+                      alt="taskIcon"
+                    />
+                    <span className="ps-3 list-group-item active">My Task</span>
+                  </a> */}
+                  <a href="#" className=" nav-item nav-link col-lg-12 d-flex">
+                    <img
+                      src={clientsIcon}
+                      className="col-lg-1"
+                      alt="clintIcon"
+                    />
+                    <span className="ps-3">Clients</span>
+                  </a>
+                  <a href="#" className=" nav-item nav-link col-lg-12 d-flex">
+                    <img
+                      src={messageIcon}
+                      className="col-lg-1"
+                      alt="messageIcon"
+                    />
+                    <span className="ps-3">Message</span>
+                  </a>
+                  <a href="#" className=" nav-item nav-link col-lg-12 d-flex ">
+                    <img
+                      src={billIcon}
+                      className="col-lg-1"
+                      alt="messageIcon"
+                    />
+                    <span className="ps-3">Billing</span>
+                  </a>
+                </nav>
+              </>
+            ) : (
+              <>
+                <img src={toggleIcon} onClick={handleToggleOn} alt="" />
+              </>
+            )}
           </div>
-
-          <nav className="col-lg-12 d-flex row gap-4 nav nav-pills nav-fill">
-            <a href="#d" className=" nav-item nav-link col-lg-12 d-flex h-25 ">
-              <img
-                src={dashboardIcon}
-                className="col-lg-1"
-                alt="dashboardIcon"
-              />
-              <span className="ps-3 ">Dashboard</span>
-            </a>
-            <a
-              href="#s"
-              className="col-lg-12 d-flex h-25 nav-item nav-link active"
-            >
-              <img src={taskIcon} className="col-lg-1 active" alt="taskIcon" />
-              <span className="ps-3 list-group-item active">My Task</span>
-            </a>
-            <a href="#d" className=" nav-item nav-link col-lg-12 d-flex">
-              <img src={clientsIcon} className="col-lg-1" alt="clintIcon" />
-              <span className="ps-3">Clients</span>
-            </a>
-            <a href="#c" className=" nav-item nav-link col-lg-12 d-flex">
-              <img src={messageIcon} className="col-lg-1" alt="messageIcon" />
-              <span className="ps-3">Message</span>
-            </a>
-            <a href="#d" className=" nav-item nav-link col-lg-12 d-flex ">
-              <img src={billIcon} className="col-lg-1" alt="messageIcon" />
-              <span className="ps-3">Billing</span>
-            </a>
-          </nav>
+          <div className="nm">
+            <nav className=" col-lg-12 col-xl-12 mt-5 d-flex row gap-4 nav nav-pills nav-fill">
+              <a href="#" className=" nav-item nav-link col-lg-12 d-flex h-25 ">
+                <img
+                  src={dashboardIcon}
+                  className="col-lg-1"
+                  alt="dashboardIcon"
+                />
+                <span className="ps-3 ">Dashboard</span>
+              </a>
+              <a
+                href="#"
+                className="col-lg-12 d-flex h-25 nav-item nav-link active"
+              >
+                <img
+                  src={taskIcon}
+                  className="col-lg-1 active"
+                  alt="taskIcon"
+                />
+                <span className="ps-3 list-group-item active">My Task</span>
+              </a>
+              <a href="#" className=" nav-item nav-link col-lg-12 d-flex">
+                <img src={clientsIcon} className="col-lg-1" alt="clintIcon" />
+                <span className="ps-3">Clients</span>
+              </a>
+              <a href="#" className=" nav-item nav-link col-lg-12 d-flex">
+                <img src={messageIcon} className="col-lg-1" alt="messageIcon" />
+                <span className="ps-3">Message</span>
+              </a>
+              <a href="#" className=" nav-item nav-link col-lg-12 d-flex ">
+                <img src={billIcon} className="col-lg-1" alt="messageIcon" />
+                <span className="ps-3">Billing</span>
+              </a>
+            </nav>
+          </div>
         </div>
-        <div className="col-lg-9  mt-3">
-          <div className="mb-3 d-lg-flex col-lg-12 justify-content-lg-between">
-            <div className="col-lg-7">
+        <div className="col-lg-9 p-0 col-xl-9  col-12  col-sm-12 mt-3">
+          <div className=" row mb-3 pb-3 d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex col-12  col-sm-12 col-lg-12 col-md-12 col-xl-12  border-bottom  justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center">
+            <div className="col-lg-7 col-xl-7  col-12 col-sm-12 col-md-12">
               <div className="input-group">
                 <input
                   type="text"
@@ -110,28 +163,26 @@ const Home = () => {
                 </button>
               </div>
             </div>
-            <div className="col-lg-5 d-flex  justify-content-lg-end">
+            <div className="col-12 mt-2 col-lg-5 col-sm-12  d-flex justify-content-between justify-content-sm-between  justify-content-lg-end">
               <img
-                className="col-lg-1"
+                className="col-lg-1 col-sm-1 col-1"
                 src={notoficationIcon}
                 alt="notofocation icon"
               />
               <img
                 src={userIcon}
-                className="col-lg-1 rounded-5"
+                className="col-lg-1 col-1 rounded-5 col-sm-1"
                 alt="notofocation icon"
               />
             </div>
           </div>
-          <div className="col-lg-12">
-            <div className="col-lg-12 d-flex justify-content-lg-between align-items-lg-center ">
+          <div className="col-lg-12 col-xl-12 col-md-12 col-12 col-sm-12">
+            <div className="col-lg-12 col-xl-12 col-sm-12 col-md-12 col-12 d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-between justify-content-sm-between justify-content-md-between justify-content-lg-between justify-content-xl-between align-items-lg-center p-2 ">
               <p className="m-0">My Task</p>
               <button
                 onClick={openModal}
                 type="button"
-                className="btn btn-primary d-flex align-items-lg-center justify-content-lg-between"
-                data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop"
+                className=" btn btn-primary justify-content-between align-items-center d-flex  d-sm-flex  align-item-sm-center justify-content-sm-between  d-md-flex  align-item-md-center justify-content-md-between d-lg-flex align-items-lg-center justify-content-lg-between"
               >
                 <span>New Task</span>
                 <img src={plusIcon} alt="" />
@@ -139,11 +190,6 @@ const Home = () => {
             </div>
 
             <div
-              id="staticBackdrop"
-              data-bs-backdrop="static"
-              data-bs-keyboard="false"
-              aria-labelledby="staticBackdropLabel"
-              aria-hidden="true"
               className="modal "
               tabIndex="-1"
               style={{ display: isModalOpen ? "block" : "none" }}
@@ -168,9 +214,9 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="col-lg-12 row">
-              <div className="col-lg-4 d-flex justify-content-lg-center  p-1 rounded-3  ">
-                <div className="col-lg-12 p-0 rounded-3  priority">
+            <div className="col-lg-12 col-sm-12 col-md-12 col-12 overflow-scroll d-flex ">
+              <div className="col-lg-4 col-12  d-flex justify-content-lg-center justify-content-center  p-1 rounded-3  ">
+                <div className="col-lg-12 col-12  p-0 rounded-3  priority">
                   <p className="p-3">Priority Task</p>
                   <HighPriority
                     listTaskData={listTaskData}
@@ -178,8 +224,8 @@ const Home = () => {
                   />
                 </div>
               </div>
-              <div className="col-lg-4 d-flex justify-content-lg-center  p-1 rounded-3  ">
-                <div className="col-lg-12 p-0 rounded-3 medium">
+              <div className="col-lg-4 col-12 d-flex justify-content-lg-center  p-1 rounded-3  ">
+                <div className="col-lg-12 col-12 p-0 rounded-3 medium">
                   <p className="p-3  ">Medium Task</p>
                   <MediumPriority
                     listTaskData={listTaskData}
@@ -187,8 +233,8 @@ const Home = () => {
                   />
                 </div>
               </div>
-              <div className="col-lg-4 d-flex justify-content-lg-center   p-1 rounded-3  ">
-                <div className="col-lg-12   p-0 normal">
+              <div className="col-lg-4 col-12 d-flex justify-content-lg-center   p-1 rounded-3  ">
+                <div className="col-lg-12 overflow-scroll  p-0 normal">
                   <p className="p-3">Normal Task</p>
                   <NormalTask
                     listTaskData={listTaskData}

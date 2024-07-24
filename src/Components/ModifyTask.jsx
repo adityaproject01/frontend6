@@ -115,11 +115,11 @@ const ModifyTask = ({
   }
 
   return (
-    <div className="col-lg-12">
+    <div className="col-lg-12 col-12">
       {!updateTask ? (
         <>
           <form className="col-lg-12" onSubmit={handleSubmit}>
-            <div className="col-lg-12 d-flex justify-content-lg-between">
+            <div className="col-lg-12 col-lg-12 d-flex justify-content-between justify-content-lg-between">
               <span> Message</span>
               <div>
                 {isEdit ? (
@@ -135,7 +135,7 @@ const ModifyTask = ({
               </div>
             </div>
 
-            <div className="col-lg-12 d-flex justify-content-lg-between">
+            <div className="col-lg-12 col-12 justify-content-between d-flex justify-content-lg-between">
               <p>Due Date</p>
               <div>
                 {isEdit ? (
@@ -152,14 +152,14 @@ const ModifyTask = ({
               </div>
             </div>
 
-            <div className="col-lg-12 d-flex justify-content-lg-between">
+            <div className="col-lg-12 d-flex col-12 justify-content-between justify-content-lg-between">
               <p>Created On</p>
               <div>
                 <span>{created_on}</span>
               </div>
             </div>
 
-            <div className="col-lg-12 d-flex justify-content-lg-between">
+            <div className="col-lg-12 d-flex col-12 justify-content-between justify-content-lg-between">
               <p>Priority</p>
               <div>
                 {isEdit ? (
@@ -181,7 +181,7 @@ const ModifyTask = ({
               </div>
             </div>
 
-            <div className="col-lg-12 d-flex justify-content-lg-between">
+            <div className="col-lg-12 d-flex col-12 justify-content-between justify-content-lg-between">
               <p>Assigned To</p>
               {isEdit ? (
                 <div>
@@ -204,7 +204,7 @@ const ModifyTask = ({
               )}
             </div>
 
-            <div className=" modal-footer justify-content-lg-between">
+            <div className=" modal-footer col-12 justify-content-between justify-content-lg-between">
               {backBtn ? (
                 <>
                   <div className="editDetails" onClick={handleBackBtnOn}>
