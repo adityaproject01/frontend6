@@ -170,7 +170,7 @@ const Home = () => {
           </div>
           <div className="col-lg-12 col-xl-12 col-md-12 col-12 col-sm-12">
             <div className="col-lg-12 col-xl-12 col-sm-12 col-md-12 col-12 d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-between justify-content-sm-between justify-content-md-between justify-content-lg-between justify-content-xl-between align-items-lg-center p-2 ">
-              <p className="m-0">My Task</p>
+              <p className="fs-3 m-0">My Task</p>
               <button
                 onClick={openModal}
                 type="button"
@@ -226,7 +226,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="col-lg-4 col-12 d-flex justify-content-lg-center  p-1 rounded-3  ">
-                <div className="overflow-auto col-lg-12  p-0 normal">
+                <div className="overflow-auto col-lg-12 col-12 p-0 rounded-3 normal">
                   <p className="p-3 fw-bold fs-5">Normal Task</p>
                   <NormalTask
                     listTaskData={listTaskData}
