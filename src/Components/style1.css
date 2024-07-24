@@ -49,8 +49,12 @@
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
+  .h-80 {
+    height: 85% !important;
+  }
   .nm {
     display: none !important;
+    align-items: center;
   }
   img {
     width: 15px;
@@ -79,6 +83,7 @@
   }
   .nm {
     display: none !important;
+    align-items: center;
   }
   img {
     width: 15px;
@@ -111,6 +116,7 @@
   }
   .nm {
     display: flex !important;
+    align-items: center;
   }
   .h-80 {
     height: 95% !important;
@@ -145,6 +151,8 @@
   }
   .nm {
     display: flex !important;
+
+    align-items: center;
   }
   .h-80 {
     height: 95% !important;
@@ -179,6 +187,7 @@
   }
   .nm {
     display: flex !important;
+    align-items: center;
   }
   .h-80 {
     height: 95% !important;

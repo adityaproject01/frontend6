@@ -35,14 +35,14 @@ const HighPriority = ({ listTaskData, refreshTasks }) => {
   };
 
   return (
-    <div className="d-flex flex-wrap  h-80 justify-content-center justify-content-lg-center">
+    <div className="d-flex flex-wrap overflow-scroll h-80 justify-content-center justify-content-lg-center">
       {tasks.length > 0 ? (
         tasks.map((item, index) => (
           <div
             key={index + 1}
             className=" bg-white  rounded-3 d-flex justify-content-lg-center justify-content-center col-lg-11 col-11 row mb-3"
           >
-            <div className="m-2 col-lg-12 col-12 d-flex justify-content-between justify-content-sm-between justify-content-md-between justify-content-lg-between justify-content-xl-between align-items-center ">
+            <div className="m-2 col-lg-12 col-12 d-flex justify-content-between justify-content-sm-between justify-content-lg-between justify-content-lg-between align-items-center">
               <div>{item.assigned_name}</div>
               <div className=" d-flex align-items-lg-center">
                 <img

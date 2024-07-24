@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <div className="container-fluid d-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center">
       <div className=" col-lg-12 col-xl-12 col-12 col-md-12 col-sm-12 row d-flex d-sm-flex d-lg-flex d-md-flex d-lg-flex d-xl-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center ">
-        <div className="col-lg-2 col-12 col-md-12 col-sm-12 col-xl-2 border-end ">
+        <div className="col-lg-2 col-12 col-md-12 col-sm-12 col-xl-2 ">
           <div className="vm">
             {toggleBtn ? (
               <>
@@ -103,7 +103,7 @@ const Home = () => {
             )}
           </div>
           <div className="nm">
-            <nav className=" col-lg-12 col-xl-12 mt-5 d-flex row gap-4 nav nav-pills nav-fill">
+            <nav className=" col-lg-12 col-xl-12 mt-5 d-flex row gap-4 nav nav-pills nav-fill  ">
               <a
                 href="#a"
                 className=" nav-item nav-link col-lg-12 d-flex h-25 "
@@ -142,7 +142,7 @@ const Home = () => {
           </div>
         </div>
         <div className="col-lg-9 p-0 col-xl-9  col-12  col-sm-12 mt-3">
-          <div className=" row mb-3 pb-3 d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex col-12  col-sm-12 col-lg-12 col-md-12 col-xl-12  border-bottom  justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center">
+          <div className=" row mb-3 pb-3 d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex col-12  col-sm-12 col-lg-12 col-md-12 col-xl-12    justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center">
             <div className="col-lg-7 col-xl-7  col-12 col-sm-12 col-md-12">
               <div className="input-group">
                 <input
@@ -206,7 +206,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="col-lg-12 col-sm-12 col-md-12 col-12 overflow-scroll d-flex ">
+            <div className="col-lg-12 col-sm-12 col-md-12 col-12  d-flex ">
               <div className="col-lg-4 col-12  d-flex justify-content-lg-center justify-content-center  p-1 rounded-3  ">
                 <div className="col-lg-12 col-12  p-0 rounded-3  priority">
                   <p className="p-3">Priority Task</p>
@@ -225,8 +225,8 @@ const Home = () => {
                   />
                 </div>
               </div>
-              <div className="col-lg-4 col-12 d-flex justify-content-lg-center   p-1 rounded-3  ">
-                <div className="col-lg-12 overflow-scroll  p-0 normal">
+              <div className="col-lg-4 col-12 d-flex justify-content-lg-center  p-1 rounded-3  ">
+                <div className="col-lg-12  p-0 normal">
                   <p className="p-3">Normal Task</p>
                   <NormalTask
                     listTaskData={listTaskData}
